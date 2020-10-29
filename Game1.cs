@@ -1,6 +1,10 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+
 
 namespace Shmup
 {
@@ -9,11 +13,15 @@ namespace Shmup
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
 
-        Texture2D saucerTxr, missleTxr, backgroundTxr;
+        Texture2D saucerTxr, missileTxr, backgroundTxr;
         Point screenSize = new Point(800, 450);
+        float spawnCooldown = 2;
 
         Sprite backgroundSprite;
         PlayerSprite playerSprite;
+        List<MissileSprite> missiles = new List<MissileSprite>();
+        SpriteFont UiFont;
+
 
         public Game1()
         {
@@ -35,20 +43,41 @@ namespace Shmup
         {
             _spriteBatch = new SpriteBatch(GraphicsDevice);
             saucerTxr = Content.Load<Texture2D>("saucer");
-            missleTxr = Content.Load<Texture2D>("missile");
+            missileTxr = Content.Load<Texture2D>("missile");
             backgroundTxr = Content.Load<Texture2D>("background");
+            UiFont = Content.Load<SpriteFont>("UIFont");
 
-            backgroundSprite = new Sprite(backgroundTxr, new Vector2(0, 0));
-            playerSprite = new PlayerSprite(saucerTxr, new Vector2(screenSize.X / 6, screenSize.Y / 2));
-        
+            backgroundSprite = new Sprite(backgroundTxr, new Vector2());
+            playerSprite = new PlayerSprite(saucerTxr, new Vector2(screenSize.X/6, screenSize.Y/2));
+            
         }
 
         protected override void Update(GameTime gameTime)
         {
+           Random rng = new Random();
+
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
 
+            if (spawnCooldown > 0)
+            {
+                spawnCooldown -= (float)gameTime.ElapsedGameTime.TotalSeconds;
+            }
+            else if (missiles.Count < 5)
+            {
+
+                missiles.Add(new MissileSprite(
+                missileTxr,
+                new Vector2(screenSize.X, rng.Next(0, screenSize.Y - missileTxr.Height))
+                ));
+                spawnCooldown = (float)(rng.NextDouble() + 0.5);
+            }
+
             playerSprite.Update(gameTime, screenSize);
+            foreach (MissileSprite missile in missiles) missile.Update(gameTime, screenSize);
+
+            
+            missiles.RemoveAll(missile => missile.dead);
 
             base.Update(gameTime);
         }
@@ -61,6 +90,11 @@ namespace Shmup
 
             backgroundSprite.Draw(_spriteBatch);
             playerSprite.Draw(_spriteBatch);
+
+
+            foreach(MissileSprite missile in missiles) missile.Draw(_spriteBatch);
+
+            _spriteBatch.DrawString(UiFont, "this is a TEST!", new Vector2(10,10), Color.White);
 
             _spriteBatch.End();
 
