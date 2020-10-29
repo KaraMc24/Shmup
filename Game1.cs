@@ -106,6 +106,13 @@ namespace Shmup
             foreach(MissileSprite missile in missileList) missile.Draw(_spriteBatch);
 
             _spriteBatch.DrawString(
+               UiFont,
+               "Lives: " + playerSprite.playerLives,
+               new Vector2(12, 12),
+               Color.Black
+               );
+
+            _spriteBatch.DrawString(
                 UiFont,
                 "Lives: " + playerSprite.playerLives,
                 new Vector2(10,10),
@@ -118,8 +125,17 @@ namespace Shmup
                 _spriteBatch.DrawString(
                     BigFont,
                     "GAME OVER",
+                    new Vector2((screenSize.X / 2) - (textSize.X / 2) + 8, (screenSize.Y / 2) - (textSize.Y / 2) + 8),
+                    Color.Black
+                     );
+
+               
+                _spriteBatch.DrawString(
+                    BigFont,
+                    "GAME OVER",
                     new Vector2((screenSize.X / 2) - (textSize.X) / 2, (screenSize.Y / 2) - (textSize.Y / 2)),
-                    Color.White);
+                    Color.White
+                    );
 
 
             }
