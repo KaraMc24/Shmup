@@ -24,3 +24,5 @@
 /Users/frananderson/Projects/Shmup/Shmup/obj/Debug/netcoreapp3.1/Shmup.genruntimeconfig.cache
 /Users/frananderson/Projects/Shmup/Shmup/bin/Debug/netcoreapp3.1/Content/background.xnb
 /Users/frananderson/Projects/Shmup/Shmup/bin/Debug/netcoreapp3.1/Content/UIFont.xnb
+/Users/frananderson/Projects/Shmup/Shmup/bin/Debug/netcoreapp3.1/Content/BigFont.spritefont
+/Users/frananderson/Projects/Shmup/Shmup/bin/Debug/netcoreapp3.1/Content/BigFont.xnb

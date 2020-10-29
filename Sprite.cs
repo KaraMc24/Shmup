@@ -26,5 +26,27 @@ namespace Shmup
                 );
 
         }
+
+        public bool IsColliding(Sprite otherSprite)
+        {
+            Rectangle thisRect = new Rectangle(
+                (int)spritePos.X,
+                (int)spritePos.Y,
+                spriteTexture.Width,
+                spriteTexture.Height
+                );
+            Rectangle otherRect = new Rectangle(
+                (int)otherSprite.spritePos.X,
+                (int)otherSprite.spritePos.Y,
+                otherSprite.spriteTexture.Width,
+                otherSprite.spriteTexture.Height
+                );
+
+            return thisRect.Intersects(otherRect);
+
+
+
+        }
+
     }
 }

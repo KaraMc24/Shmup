@@ -5,11 +5,13 @@
   <Config />
   <SourceFiles>
     <File>/Users/frananderson/Projects/Shmup/Shmup/Content/background.png</File>
+    <File>/Users/frananderson/Projects/Shmup/Shmup/Content/BigFont.spritefont</File>
     <File>/Users/frananderson/Projects/Shmup/Shmup/Content/missile.png</File>
     <File>/Users/frananderson/Projects/Shmup/Shmup/Content/saucer.png</File>
     <File>/Users/frananderson/Projects/Shmup/Shmup/Content/UIFont.spritefont</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

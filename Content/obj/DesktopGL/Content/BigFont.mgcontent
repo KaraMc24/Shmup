@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <SourceFile>/Users/frananderson/Projects/Shmup/Shmup/Content/UIFont.spritefont</SourceFile>
+  <SourceFile>/Users/frananderson/Projects/Shmup/Shmup/Content/BigFont.spritefont</SourceFile>
   <SourceTime>2020-10-29T11:21:54.8368969+00:00</SourceTime>
-  <DestFile>/Users/frananderson/Projects/Shmup/Shmup/Content/bin/DesktopGL/Content/UIFont.xnb</DestFile>
-  <DestTime>2020-10-29T11:21:58.479051+00:00</DestTime>
+  <DestFile>/Users/frananderson/Projects/Shmup/Shmup/Content/bin/DesktopGL/Content/BigFont.xnb</DestFile>
+  <DestTime>2020-10-29T11:28:10.1472345+00:00</DestTime>
   <Importer>FontDescriptionImporter</Importer>
   <ImporterTime>2020-08-10T16:17:54+01:00</ImporterTime>
   <Processor>FontDescriptionProcessor</Processor>
