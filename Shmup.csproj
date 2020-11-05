@@ -43,9 +43,4 @@
     <Content Remove="Content\obj\DesktopGL\Content\background.mgcontent" />
     <Content Remove="Content\obj\DesktopGL\Content\background.mgcontent" />
   </ItemGroup>
-  <ItemGroup>
-    <Content Update="Content\BigFont.spritefont">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
 </Project>

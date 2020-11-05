@@ -1,6 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Input;
 
 namespace Shmup
 {
@@ -21,7 +20,11 @@ namespace Shmup
         {
             _spriteBatch.Draw(
                 spriteTexture,
-                new Rectangle((int)spritePos.X, (int)spritePos.Y, spriteTexture.Width, spriteTexture.Height),
+                new Rectangle((int)spritePos.X,
+                (int)spritePos.Y,
+                spriteTexture.Width,
+                spriteTexture.Height
+                ),
                 Color.White
                 );
 
