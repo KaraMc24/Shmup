@@ -26,3 +26,5 @@
 /Users/frananderson/Projects/Shmup/Shmup/bin/Debug/netcoreapp3.1/Content/UIFont.xnb
 /Users/frananderson/Projects/Shmup/Shmup/bin/Debug/netcoreapp3.1/Content/BigFont.xnb
 /Users/frananderson/Projects/Shmup/Shmup/bin/Debug/netcoreapp3.1/Content/particle.xnb
+/Users/frananderson/Projects/Shmup/Shmup/bin/Debug/netcoreapp3.1/Content/missileExplode.xnb
+/Users/frananderson/Projects/Shmup/Shmup/bin/Debug/netcoreapp3.1/Content/shipExplode.xnb
